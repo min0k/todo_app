@@ -12,8 +12,13 @@ function App() {
   }
 
   function handleSubmit(e) {
-    const id = nanoid();
     e.preventDefault();
+    const id = nanoid();
+
+    if (UserInputNewTodo === "") {
+      return
+    }
+
     setTodos((prevValue) => [
       ...prevValue,
       {
@@ -24,7 +29,6 @@ function App() {
     ]);
     setUserInputNewTodo("");
   }
-
 
   function completeTask(id) {
     const updatedTodos = todos.map((obj) => {
