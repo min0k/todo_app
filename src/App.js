@@ -54,6 +54,8 @@ function App() {
     setTodos(updatedTodos);
   }
 
+  console.log(todos);
+
   return (
     <div className="app">
       <Header
