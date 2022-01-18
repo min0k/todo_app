@@ -1,3 +1,4 @@
+import { nanoid } from "nanoid";
 import React from "react";
 import Header from "./Components/Header";
 import Todo from "./Components/Todos";
@@ -8,26 +9,35 @@ function App() {
 
   function handleInput(e) {
     setUserInputNewTodo(e.target.value);
-    console.log(e.target.value);
   }
 
   function handleSubmit(e) {
+    const id = nanoid();
     e.preventDefault();
-    setTodos(prevValue => [
+    setTodos((prevValue) => [
       ...prevValue,
       {
         task: UserInputNewTodo,
         isDone: false,
-      }
-    ])
+        id: id,
+      },
+    ]);
+    setUserInputNewTodo("");
+  }
+
+  // Add Delete and Complete functionality
+  function completeTask(e) {
+  }
+
+
+  function deleteTask(id) {
+    const updatedTodos = todos.filter(e => {
+      return e.id !== id
+    });
+    setTodos(updatedTodos);
   }
 
   console.log(todos);
-
-  // function createTodo(todo) {
-  //   return {
-  //   }
-  // }
 
   return (
     <div className="app">
@@ -36,7 +46,7 @@ function App() {
         handleInput={handleInput}
         UserInputNewTodo={UserInputNewTodo}
       />
-      <Todo todos={todos}/>
+      <Todo todos={todos} deleteTask={deleteTask} />
     </div>
   );
 }
