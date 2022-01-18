@@ -25,7 +25,7 @@ function App() {
     setUserInputNewTodo("");
   }
 
-  // Add Delete and Complete functionality
+
   function completeTask(id) {
     const updatedTodos = todos.map((obj) => {
       if (obj.id === id) {
