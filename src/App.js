@@ -26,18 +26,29 @@ function App() {
   }
 
   // Add Delete and Complete functionality
-  function completeTask(e) {
+  function completeTask(id) {
+    const updatedTodos = todos.map((obj) => {
+      if (obj.id === id) {
+        return {
+          ...obj,
+          isDone: !obj.isDone,
+        };
+      } else {
+        return {
+          ...obj,
+        };
+      }
+    });
+    setTodos(updatedTodos);
+    console.log(todos);
   }
 
-
   function deleteTask(id) {
-    const updatedTodos = todos.filter(e => {
-      return e.id !== id
+    const updatedTodos = todos.filter((e) => {
+      return e.id !== id;
     });
     setTodos(updatedTodos);
   }
-
-  console.log(todos);
 
   return (
     <div className="app">
@@ -46,7 +57,7 @@ function App() {
         handleInput={handleInput}
         UserInputNewTodo={UserInputNewTodo}
       />
-      <Todo todos={todos} deleteTask={deleteTask} />
+      <Todo todos={todos} deleteTask={deleteTask} completeTask={completeTask} />
     </div>
   );
 }
