@@ -11,7 +11,7 @@
 /* App styles */
 .app {
   margin: 52px;
-  max-width: 600px;
+  max-width: 420px;
   min-width: 300px;
 }
 
@@ -32,6 +32,11 @@ input {
   border-width: 0 0 2px;
   margin-right: 4px;
   font-size: large;
+}
+
+input::placeholder {
+  color: #A9A9A9;
+
 }
 
 form {
@@ -66,11 +71,13 @@ h1 {
   background-repeat: no-repeat;
   margin-left: 8px;
   font-size: 18px;
+  flex: none;
 }
 
 .delete {
   color: #dc143c;
-  margin-left: 24px;
+  margin-left: auto;
+
 }
 
 .done {
