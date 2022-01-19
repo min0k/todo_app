@@ -4,7 +4,7 @@ export default function TodoCard(props) {
   console.log(props.isDone);
 
   const doneStyles = {
-    color: "grey",
+    color: "#C8C8C8",
     textDecorationLine: "line-through",
   };
 

@@ -50,7 +50,6 @@ function App() {
       }
     });
     setTodos(updatedTodos);
-    console.log(todos);
   }
 
   function deleteTask(id) {
@@ -59,8 +58,6 @@ function App() {
     });
     setTodos(updatedTodos);
   }
-
-  console.log(todos);
 
   return (
     <div className="app">
