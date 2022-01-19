@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function TodoCard(props) {
-  console.log(props.isDone);
 
   const doneStyles = {
     color: "#C8C8C8",
