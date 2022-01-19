@@ -4,8 +4,14 @@ import Header from "./Components/Header";
 import Todo from "./Components/Todos";
 
 function App() {
-  const [todos, setTodos] = React.useState([]);
+  const [todos, setTodos] = React.useState(
+    JSON.parse(localStorage.getItem("todos")) || []
+  );
   const [UserInputNewTodo, setUserInputNewTodo] = React.useState("");
+
+  React.useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   function handleInput(e) {
     setUserInputNewTodo(e.target.value);
@@ -16,7 +22,7 @@ function App() {
     const id = nanoid();
 
     if (UserInputNewTodo === "") {
-      return
+      return;
     }
 
     setTodos((prevValue) => [
