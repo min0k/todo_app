@@ -4,6 +4,7 @@ import Header from "./Components/Header";
 import Todo from "./Components/Todos";
 
 function App() {
+
   const [todos, setTodos] = React.useState(
     JSON.parse(localStorage.getItem("todos")) || []
   );
@@ -59,6 +60,12 @@ function App() {
     setTodos(updatedTodos);
   }
 
+
+  function handleClearFinishedTasks() {
+    const clearedArray = todos.filter(e => e.isDone !== true)
+    setTodos(clearedArray)
+  }
+
   return (
     <div className="app">
       <Header
@@ -67,6 +74,7 @@ function App() {
         UserInputNewTodo={UserInputNewTodo}
       />
       <Todo todos={todos} deleteTask={deleteTask} completeTask={completeTask} />
+      <button onClick={handleClearFinishedTasks}>clear finished</button>
     </div>
   );
 }
