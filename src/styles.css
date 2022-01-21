@@ -36,7 +36,6 @@ input {
 
 input::placeholder {
   color: #A9A9A9;
-
 }
 
 form {
@@ -51,6 +50,8 @@ h1 {
 
 .todo {
   margin-top: 42px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid #A9A9A9;;
 }
 
 /* Todocard styles */
@@ -86,4 +87,20 @@ h1 {
 
 .todocard--text {
   font-size: 18px;
+}
+
+
+
+
+
+
+.cleartasks--button {
+  font-size: 18px;
+  margin-top: 24px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  background-repeat: no-repeat;
 }

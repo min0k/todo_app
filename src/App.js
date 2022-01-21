@@ -2,13 +2,15 @@ import { nanoid } from "nanoid";
 import React from "react";
 import Header from "./Components/Header";
 import Todo from "./Components/Todos";
+import sweep from "./sweep.gif";
+import sweep_static from "./sweep_static.jpg";
 
 function App() {
-
   const [todos, setTodos] = React.useState(
     JSON.parse(localStorage.getItem("todos")) || []
   );
   const [UserInputNewTodo, setUserInputNewTodo] = React.useState("");
+  const [broom, setBroom] = React.useState(sweep_static);
 
   React.useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
@@ -60,10 +62,20 @@ function App() {
     setTodos(updatedTodos);
   }
 
-
   function handleClearFinishedTasks() {
-    const clearedArray = todos.filter(e => e.isDone !== true)
-    setTodos(clearedArray)
+    const clearedArray = todos.filter((e) => e.isDone !== true);
+    setTodos(clearedArray);
+  }
+
+  function triggerGif() {
+    if (broom === sweep_static) {
+      setBroom(sweep);
+    } else {
+      setBroom(sweep_static);
+    }
+
+    console.log(broom);
+
   }
 
   return (
@@ -74,7 +86,15 @@ function App() {
         UserInputNewTodo={UserInputNewTodo}
       />
       <Todo todos={todos} deleteTask={deleteTask} completeTask={completeTask} />
-      <button onClick={handleClearFinishedTasks}>clear finished</button>
+      <button
+        onMouseOver={triggerGif}
+        onMouseOut={triggerGif}
+        className="cleartasks--button"
+        onClick={handleClearFinishedTasks}
+      >
+        clear finished tasks
+        <img src={broom} width="40px" alt="loading..." />
+      </button>
     </div>
   );
 }
