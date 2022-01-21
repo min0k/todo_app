@@ -92,7 +92,7 @@ function App() {
         className="cleartasks--button"
         onClick={handleClearFinishedTasks}
       >
-        clear finished tasks
+         ➤ clear finished tasks
         <img src={broom} width="40px" alt="loading..." />
       </button>
     </div>
