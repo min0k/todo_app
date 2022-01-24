@@ -1,74 +1,18 @@
-import { nanoid } from "nanoid";
 import React from "react";
 import Header from "./UIcomponents/Header";
 import Todo from "./UIcomponents/Todos";
 import useTodoList from "./domain_components/useAnimatedGif";
+import useTodoLogic from "./domain_components/useTodoLogic";
 
 function App() {
-
-  const {broom, triggerGif} = useTodoList();
-
-  const [todos, setTodos] = React.useState(
-    JSON.parse(localStorage.getItem("todos")) || []
-  );
-  const [UserInputNewTodo, setUserInputNewTodo] = React.useState("");
-
-
-  React.useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos));
-  }, [todos]);
-
-  function handleInput(e) {
-    setUserInputNewTodo(e.target.value);
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    const id = nanoid();
-
-    if (UserInputNewTodo === "") {
-      return;
-    }
-
-    setTodos((prevValue) => [
-      ...prevValue,
-      {
-        task: UserInputNewTodo,
-        isDone: false,
-        id: id,
-      },
-    ]);
-    setUserInputNewTodo("");
-  }
-
-  function completeTask(id) {
-    const updatedTodos = todos.map((obj) => {
-      if (obj.id === id) {
-        return {
-          ...obj,
-          isDone: !obj.isDone,
-        };
-      } else {
-        return {
-          ...obj,
-        };
-      }
-    });
-    setTodos(updatedTodos);
-  }
-
-  function deleteTask(id) {
-    const updatedTodos = todos.filter((e) => {
-      return e.id !== id;
-    });
-    setTodos(updatedTodos);
-  }
-
-  function handleClearFinishedTasks() {
-    const clearedArray = todos.filter((e) => e.isDone !== true);
-    setTodos(clearedArray);
-  }
-
+  const { broom, triggerGif } = useTodoList();
+  const {handleSubmit,
+    handleInput,
+    userInputNewTodo,
+    todos,
+    deleteTask,
+    completeTask,
+    handleClearFinishedTasks} = useTodoLogic();
 
 
   return (
@@ -76,7 +20,7 @@ function App() {
       <Header
         handleSubmit={handleSubmit}
         handleInput={handleInput}
-        UserInputNewTodo={UserInputNewTodo}
+        UserInputNewTodo={userInputNewTodo}
       />
       <Todo todos={todos} deleteTask={deleteTask} completeTask={completeTask} />
       <button
@@ -85,7 +29,7 @@ function App() {
         className="cleartasks--button"
         onClick={handleClearFinishedTasks}
       >
-         ➤ clear finished tasks
+        ➤ clear finished tasks
         <img src={broom} width="40px" alt="loading..." />
       </button>
     </div>
