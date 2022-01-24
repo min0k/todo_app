@@ -1,7 +1,7 @@
 import { nanoid } from "nanoid";
 import React from "react";
-import Header from "./components/Header";
-import Todo from "./components/Todos";
+import Header from "./UIcomponents/Header";
+import Todo from "./UIcomponents/Todos";
 import useTodoList from "./domain_components/useAnimatedGif";
 
 function App() {
