@@ -1,16 +1,18 @@
 import { nanoid } from "nanoid";
 import React from "react";
-import Header from "./Components/Header";
-import Todo from "./Components/Todos";
-import sweep from "./sweep.gif";
-import sweep_static from "./sweep_static.jpg";
+import Header from "./components/Header";
+import Todo from "./components/Todos";
+import useTodoList from "./domain_components/useAnimatedGif";
 
 function App() {
+
+  const {broom, triggerGif} = useTodoList();
+
   const [todos, setTodos] = React.useState(
     JSON.parse(localStorage.getItem("todos")) || []
   );
   const [UserInputNewTodo, setUserInputNewTodo] = React.useState("");
-  const [broom, setBroom] = React.useState(sweep_static);
+
 
   React.useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
@@ -67,16 +69,7 @@ function App() {
     setTodos(clearedArray);
   }
 
-  function triggerGif() {
-    if (broom === sweep_static) {
-      setBroom(sweep);
-    } else {
-      setBroom(sweep_static);
-    }
 
-    console.log(broom);
-
-  }
 
   return (
     <div className="app">
