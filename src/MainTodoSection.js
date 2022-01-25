@@ -12,7 +12,6 @@ function MainTodoSection() {
     handleInput,
     userInputNewTodo,
     todos,
-    deleteTask,
     completeTask,
     handleClearFinishedTasks,
   } = useTodoLogic();
@@ -24,7 +23,7 @@ function MainTodoSection() {
         handleInput={handleInput}
         UserInputNewTodo={userInputNewTodo}
       />
-      <Todo todos={todos} deleteTask={deleteTask} completeTask={completeTask} />
+      <Todo todos={todos} completeTask={completeTask} />
       <ClearTasks
         triggerGif={triggerGif}
         handleClearFinishedTasks={handleClearFinishedTasks}

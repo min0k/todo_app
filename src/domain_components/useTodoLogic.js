@@ -50,13 +50,6 @@ export default function useTodoLogic() {
     setTodos(updatedTodos);
   }
 
-  function deleteTask(id) {
-    const updatedTodos = todos.filter((e) => {
-      return e.id !== id;
-    });
-    setTodos(updatedTodos);
-  }
-
   function handleClearFinishedTasks() {
     const clearedArray = todos.filter((e) => e.isDone !== true);
     setTodos(clearedArray);
@@ -67,7 +60,6 @@ export default function useTodoLogic() {
     handleInput,
     userInputNewTodo,
     todos,
-    deleteTask,
     completeTask,
     handleClearFinishedTasks,
   };
