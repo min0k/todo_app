@@ -7,10 +7,6 @@ export default function TodoCard(props) {
     textDecorationLine: "line-through",
   };
 
-  function deleteHandle() {
-    props.deleteTask(props.id)
-  }
-
   function completeHandle() {
     props.completeTask(props.id)
   }
@@ -21,12 +17,6 @@ export default function TodoCard(props) {
       <p style={props.isDone ? doneStyles : null} className="todocard--text">
         {props.task}
       </p>
-      <button
-        onClick={deleteHandle}
-        className="todocard--button delete"
-      >
-        ✘
-      </button>
       <button
         onClick={completeHandle}
         className="todocard--button done"

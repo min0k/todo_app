@@ -10,7 +10,6 @@ export default function Todo(props) {
         task={e.task}
         key={nanoid()}
         id={e.id}
-        deleteTask={props.deleteTask}
         completeTask={props.completeTask}
       />
     );

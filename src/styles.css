@@ -8,11 +8,34 @@
     "Lucida Sans", Arial, sans-serif;
 }
 
-/* App styles */
+
+
+/* App Styles */
+
 .app {
+  display: flex;
+}
+
+
+/*  Main Todo Section */
+.main-todo {
   margin: 52px;
   max-width: 420px;
   min-width: 300px;
+}
+
+/* Past Todo Section */
+
+.past-todos {
+  margin: 52px;
+  max-width: 420px;
+  min-width: 300px;
+}
+
+.past-todos--text {
+  color: lightgray;
+  font-size: 18px;
+
 }
 
 /* Header styles */
@@ -75,24 +98,14 @@ h1 {
   flex: none;
 }
 
-.delete {
-  color: #dc143c;
-  margin-left: auto;
-
-}
-
 .done {
+  margin-left: auto;
   color: darkgreen;
 }
 
 .todocard--text {
   font-size: 18px;
 }
-
-
-
-
-
 
 .cleartasks--button {
   font-size: 18px;

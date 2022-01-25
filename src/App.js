@@ -1,10 +1,12 @@
 import React from "react";
-import MainTodo from "./MainTodo";
+import MainTodoSection from "./MainTodoSection";
+import PastTodoSection from "./PastTodoSection";
 
 function App() {
   return (
     <div className="app">
-      <MainTodo />
+      <MainTodoSection />
+      <PastTodoSection />
     </div>
   );
 }
