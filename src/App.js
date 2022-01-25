@@ -1,19 +1,21 @@
 import React from "react";
-import Header from "./UIcomponents/Header";
-import Todo from "./UIcomponents/Todos";
+import Header from "./ui_components/Header";
+import Todo from "./ui_components/Todos";
 import useTodoList from "./domain_components/useAnimatedGif";
 import useTodoLogic from "./domain_components/useTodoLogic";
+import ClearTasks from "./ui_components/ClearTasks";
 
 function App() {
   const { broom, triggerGif } = useTodoList();
-  const {handleSubmit,
+  const {
+    handleSubmit,
     handleInput,
     userInputNewTodo,
     todos,
     deleteTask,
     completeTask,
-    handleClearFinishedTasks} = useTodoLogic();
-
+    handleClearFinishedTasks,
+  } = useTodoLogic();
 
   return (
     <div className="app">
@@ -23,15 +25,11 @@ function App() {
         UserInputNewTodo={userInputNewTodo}
       />
       <Todo todos={todos} deleteTask={deleteTask} completeTask={completeTask} />
-      <button
-        onMouseOver={triggerGif}
-        onMouseOut={triggerGif}
-        className="cleartasks--button"
-        onClick={handleClearFinishedTasks}
-      >
-        ➤ clear finished tasks
-        <img src={broom} width="40px" alt="loading..." />
-      </button>
+      <ClearTasks
+        triggerGif={triggerGif}
+        handleClearFinishedTasks={handleClearFinishedTasks}
+        broom={broom}
+      />
     </div>
   );
 }
