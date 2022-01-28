@@ -8,8 +8,6 @@
     "Lucida Sans", Arial, sans-serif;
 }
 
-
-
 /* App Styles */
 
 .app {
@@ -36,7 +34,7 @@
 
 .past-todos--text {
   color: lightgray;
-  font-size: 18px;
+  font-size: 1.1rem;
   margin-top: 2px;
 }
 
@@ -73,7 +71,7 @@ form {
 }
 
 h1 {
-  font-size: 54px;
+  font-size: 3.38rem;
 }
 
 /* Todo styles */
@@ -111,11 +109,11 @@ h1 {
 }
 
 .todocard--text {
-  font-size: 18px;
+  font-size: 1.1rem;
 }
 
 .cleartasks--button {
-  font-size: 18px;
+  font-size: 1.1rem;
   margin-top: 24px;
   background-color: transparent;
   border: none;
