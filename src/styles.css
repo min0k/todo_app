@@ -47,7 +47,7 @@
   color: lightgray;
   font-size: 1.1rem;
   margin-top: .14em;
-  inline-size: 100%;
+  inline-size: 90%;
   overflow-wrap: break-word;
 }
 
@@ -92,7 +92,6 @@ h1 {
 .todo {
   margin-top: 2.62em;
   padding-bottom: 1.8em;
-  border-bottom: 2px solid #A9A9A9;
 }
 
 /* Todocard styles */
@@ -112,11 +111,14 @@ h1 {
   background-repeat: no-repeat;
   font-size: 1.125rem;
   flex: none;
-
 }
 
 .done {
   margin-left: auto;
+  color: grey;
+}
+
+.todocard--button:hover {
   color: darkgreen;
 }
 
@@ -135,4 +137,9 @@ h1 {
   overflow: hidden;
   outline: none;
   background-repeat: no-repeat;
+  color: grey;
+}
+
+.cleartasks--button:hover {
+  color: black;
 }
