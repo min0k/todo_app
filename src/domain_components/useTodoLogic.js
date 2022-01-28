@@ -32,9 +32,17 @@ export default function useTodoLogic() {
         id: id,
       },
     ]);
+    
+    clearInput();
+  }
+
+
+  function clearInput() {
     setUserInputNewTodo("");
     console.log(userInputNewTodo);
+    console.log("inputcleared");
   }
+
 
   function completeTask(id) {
     const updatedTodos = todos.map((obj) => {
