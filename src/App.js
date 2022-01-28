@@ -30,7 +30,7 @@ function App() {
         todos={todos}
         handleSubmit={handleSubmit}
         handleInput={handleInput}
-        UserInputNewTodo={userInputNewTodo}
+        userInputNewTodo={userInputNewTodo}
         completeTask={completeTask}
       />
       <PastTodoSection 

@@ -9,7 +9,7 @@ export default function Header(props) {
           placeholder="new todo"
           type="text"
           onChange={props.handleInput}
-          value={props.UserInputNewTodo}
+          value={props.userInputNewTodo}
         ></input>
         <button type="submit" className="header--button">
           ➕

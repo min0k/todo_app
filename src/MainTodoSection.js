@@ -8,7 +8,7 @@ function MainTodoSection(props) {
       <Header
         handleSubmit={props.handleSubmit}
         handleInput={props.handleInput}
-        UserInputNewTodo={props.userInputNewTodo}
+        userInputNewTodo={props.userInputNewTodo}
       />
       <Todo todos={props.todos} completeTask={props.completeTask} />
     </div>
