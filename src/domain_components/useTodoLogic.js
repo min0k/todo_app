@@ -5,6 +5,7 @@ export default function useTodoLogic() {
   const [todos, setTodos] = React.useState(
     JSON.parse(localStorage.getItem("todos")) || []
   );
+
   const [userInputNewTodo, setUserInputNewTodo] = React.useState("");
 
   React.useEffect(() => {
@@ -32,6 +33,7 @@ export default function useTodoLogic() {
       },
     ]);
     setUserInputNewTodo("");
+    console.log(userInputNewTodo);
   }
 
   function completeTask(id) {

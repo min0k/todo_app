@@ -2,7 +2,7 @@ import React from "react";
 import sweep from "../../src/sweep.gif";
 import sweep_static from "../sweep_static.jpg";
 
-export default function useTodoList() {
+export default function useAnimatedGif() {
   const [broom, setBroom] = React.useState(sweep_static);
 
   function triggerGif() {

@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function TodoCard(props) {
-  console.log(props);
   const doneStyles = {
     color: "#C8C8C8",
     textDecorationLine: "line-through",
@@ -11,11 +10,6 @@ export default function TodoCard(props) {
     props.completeTask(props.id);
   }
 
-  const temp = () => {
-    return props.isDone ? "✓" : "hello";
-  }
-
-  const doneEmoji = props.isDone ? "undo" : "✓";
   
   const undoEmojiStyles = {
     color: "grey",
@@ -28,7 +22,7 @@ export default function TodoCard(props) {
         {props.task}
       </p>
       <button style={props.isDone ? undoEmojiStyles : null} onClick={completeHandle} className="todocard--button done">
-       {doneEmoji}
+      ✓
       </button>
     </div>
   );
