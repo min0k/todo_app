@@ -10,16 +10,14 @@
 
 /* App Styles */
 
-
-.app {
-  width: 95%;
+.container-body {
   display: flex;
   justify-content: space-evenly;
   align-items: flex-start;
 }
 
 @media (max-width: 760px) {
-  .app {
+  .container-body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -142,4 +140,21 @@ h1 {
 
 .cleartasks--button:hover {
   color: black;
+}
+
+/* nav */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav li {
+  list-style: none;
+  margin-left: 1rem;
 }
