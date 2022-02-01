@@ -3,6 +3,7 @@ import MainTodoSection from "./MainTodoSection";
 import PastTodoSection from "./PastTodoSection";
 
 import useTodoLogic from "./domain_components/useTodoLogic";
+import Nav from "./ui_components/Nav";
 
 //lift relevant state up into App, use memo on children.
 
@@ -26,17 +27,20 @@ function App() {
 
   return (
     <div className="app">
-      <MainTodoSection
-        todos={todos}
-        handleSubmit={handleSubmit}
-        handleInput={handleInput}
-        userInputNewTodo={userInputNewTodo}
-        completeTask={completeTask}
-      />
-      <PastTodoSection 
-      todos={todos}
-      handleClearFinishedTasks={handleClearFinishedTasks}
-      />
+      <Nav />
+      <div className="container">
+        <MainTodoSection
+          todos={todos}
+          handleSubmit={handleSubmit}
+          handleInput={handleInput}
+          userInputNewTodo={userInputNewTodo}
+          completeTask={completeTask}
+        />
+        <PastTodoSection
+          todos={todos}
+          handleClearFinishedTasks={handleClearFinishedTasks}
+        />
+      </div>
     </div>
   );
 }
