@@ -83,6 +83,11 @@ nav ul {
   overflow-wrap: break-word;
 }
 
+
+.past-todos--text:hover {
+  color: black;
+}
+
 .past-todos--h1 {
   color: #bebebe;
 }
@@ -114,7 +119,7 @@ form {
 }
 
 h1 {
-  font-size: 3.38rem;
+  font-size: 3rem;
 }
 
 /* Todo styles */
@@ -175,3 +180,8 @@ h1 {
 }
 
 /* nav */
+
+.nav {
+  padding-top: 1em;
+  margin-bottom: 1em;
+}

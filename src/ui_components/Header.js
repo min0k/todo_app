@@ -3,7 +3,6 @@ import React from "react";
 export default function Header(props) {
   return (
     <div className="header">
-      <h1>🗒️ my todo list</h1>
       <form onSubmit={props.handleSubmit}>
         <input
           placeholder="new todo"
