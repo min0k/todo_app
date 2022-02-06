@@ -12,8 +12,6 @@ import Nav from "./ui_components/Nav";
 //add total completed tasks
 //add show completed date/time on hover
 
-//add simple header
-//add simple footer
 
 function App() {
   const {
